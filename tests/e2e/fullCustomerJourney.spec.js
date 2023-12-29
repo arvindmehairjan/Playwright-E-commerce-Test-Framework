@@ -1,10 +1,15 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
 
-test('has title', async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.goto('/');
+});
 
-  // Expect a title "to contain" a substring.
+test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/Swag Labs/);
+});
 
-  await expect(page.locator('.login_logo')).toHaveText("Swag Labs")});
+test('has the name Swag Labs on login logo', async ({ page }) => {
+  // Use the correct class name for the locator
+  await expect(page.locator('.login_logo')).toHaveText('Swag Labs');
+});
