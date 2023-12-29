@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build Docker image
-        run: docker build -t your-image-name:latest .
+        run: docker build -t playwright-node-js:latest .
 
       # Optionally, push the image to Docker Hub or another registry
       - name: Push Docker image
