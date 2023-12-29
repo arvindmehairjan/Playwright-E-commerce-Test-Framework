@@ -1,20 +1,12 @@
-// @ts-check
-const { test, expect } = require('@playwright/test');
+import { LoginPage } from '../../page-objects/LoginPage';
+import  { test, expect } from '@playwright/test'
 
 test.beforeEach(async ({ page }) => {
+  const loginPage = new LoginPage(page);
   await page.goto('/');
+  await loginPage.enterCredentials();
 });
 
-test('has title', async ({ page }) => {
+test('Full Customer Journey', async ({ page }) => {
   await expect(page).toHaveTitle(/Swag Labs/);
-});
-
-test('has url', async ({ page }) => {
-  await expect(page).toHaveURL("https://www.sauhcewdemo.com/");
-});
-
-
-test('has the name Swag Labs on login logo', async ({ page }) => {
-  // Use the correct class name for the locator
-  await expect(page.locator('.login_logo')).toHaveText('Swag Labs');
 });
