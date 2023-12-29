@@ -10,7 +10,7 @@ test('has title', async ({ page }) => {
 });
 
 test('has url', async ({ page }) => {
-  await expect(page).toHaveURL("https://www.saucedemo.com/");
+  await expect(page).toHaveURL("https://www.sauhcewdemo.com/");
 });
 
 
