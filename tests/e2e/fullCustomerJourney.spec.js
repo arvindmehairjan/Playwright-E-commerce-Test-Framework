@@ -1,5 +1,5 @@
-import  { test, expect } from '@playwright/test'
-import { Homepage } from '../../page-objects/HomePage';
+import { test, expect } from '@playwright/test';
+import { ProductPage } from '../../page-objects/ProductPage';
 import { LoginPage } from '../../page-objects/LoginPage';
 
 test.beforeEach(async ({ page }) => {
@@ -9,8 +9,10 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Full Customer Journey', async ({ page }) => {
-  const homePage = new Homepage(page);
+  const productPage = new ProductPage(page);
+
   await expect(page).toHaveTitle(/Swag Labs/);
-  await homePage.addToCart(0, "Sauce Labs Backpack", "$29.99");
-  await homePage.addToCart(2, "Sauce Labs Bolt T-Shirt", "$15.99");
+  await productPage.addToCart(0, 'Sauce Labs Backpack', '$29.99');
+  await productPage.clickOnCart(1);
+
 });
