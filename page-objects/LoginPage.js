@@ -1,3 +1,4 @@
+require('dotenv').config();
 
 export class LoginPage {
     constructor(page) {
@@ -7,8 +8,8 @@ export class LoginPage {
         this.loginBtn = page.getByRole('button', { name: 'Login' });
     }
     enterCredentials = async () => {
-        await this.usernameField.fill("standard_user");
-        await this.passwordField.fill("secret_sauce");
+        await this.usernameField.fill(process.env.USERNAME);
+        await this.passwordField.fill(process.env.PASSWORD);
         await this.loginBtn.click();
     }
 }
