@@ -6,7 +6,7 @@ WORKDIR /tests/e2e
 
 # Set build arguments with default values
 ARG ECOMMERCE_USERNAME=default_username
-ARG ECOMMERCE_PASSWORD=ECOMMERCE_PASSWORD
+ARG ECOMMERCE_PASSWORD=default_password
 
 # Set environment variables using build arguments
 ENV ECOMMERCE_USERNAME=$ECOMMERCE_USERNAME \
