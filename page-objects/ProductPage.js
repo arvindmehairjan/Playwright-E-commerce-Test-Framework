@@ -10,7 +10,8 @@ export class ProductPage {
     }
 
     addToCart = async (productIndex, productName, productPrice) => {
-        await this.title.waitFor();
+        await this.page.waitForURL('https://www.saucedemo.com/inventory.html');
+        await this.productName.nth(productIndex).waitFor();
         let getProductName = await this.productName.nth(productIndex).textContent()
         await expect(getProductName).toEqual(productName);
         let getPrice = await this.productPrice.nth(productIndex).textContent()
@@ -23,5 +24,4 @@ export class ProductPage {
         await expect(getNumbersInCart).toEqual(expectedCount);
         await this.shoppingCart.click();
     }
-
 }

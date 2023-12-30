@@ -1,4 +1,3 @@
-import { log } from "console";
 
 export class LoginPage {
     constructor(page) {
@@ -9,6 +8,9 @@ export class LoginPage {
         this.errorText = page.locator("[data-test='error']");
     }
     enterCredentials = async () => {
+        const currentUrl = this.page.url()
+        console.log(currentUrl);
+
         await this.usernameField.type(process.env.ECOMMERCE_USERNAME);
         await this.passwordField.type(process.env.ECOMMERCE_PASSWORD);
         await this.loginBtn.click();
