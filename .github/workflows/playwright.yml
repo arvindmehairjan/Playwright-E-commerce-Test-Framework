@@ -48,7 +48,6 @@
 #           HOME: /root
 #           USERNAME: ${{ secrets.USERNAME }}
 #           PASSWORD: ${{ secrets.PASSWORD }}
-
 name: Playwright Tests
 
 on:
@@ -75,9 +74,12 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: List local Docker images
+        run: docker images
+
       - name: Run Playwright tests
         run: |
-          docker run --rm -e USERNAME="${{ secrets.USERNAME }}" -e PASSWORD="${{ secrets.PASSWORD }}" playwright-tests:latest
+          docker run --rm -e USERNAME="${{ secrets.USERNAME }}" -e PASSWORD="${{ secrets.PASSWORD }}" iamarra/playwright-tests:latest
         env:
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
