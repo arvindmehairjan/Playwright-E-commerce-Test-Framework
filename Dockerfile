@@ -7,6 +7,9 @@ WORKDIR /tests/e2e
 # Copy project files (including tests)
 COPY . .
 
+# Copy only the necessary files for installing dependencies
+COPY package*.json ./
+
 # Install dependencies
 RUN npm install
 
