@@ -1,3 +1,5 @@
+import { log } from "console";
+
 export class LoginPage {
     constructor(page) {
         this.page = page;
@@ -6,8 +8,8 @@ export class LoginPage {
         this.loginBtn = page.getByRole('button', { name: 'Login' });
     }
     enterCredentials = async () => {
-        await this.usernameField.type(process.env.USERNAME);
-        await this.passwordField.type(process.env.PASSWORD);
+        await this.usernameField.fill(process.env.ECOMMERCE_USERNAME);
+        await this.passwordField.fill(process.env.ECOMMERCE_PASSWORD);
         await this.loginBtn.click();
     }
 }
