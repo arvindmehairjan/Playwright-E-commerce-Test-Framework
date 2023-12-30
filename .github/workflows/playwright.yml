@@ -46,5 +46,5 @@ jobs:
         run: npx playwright test
         env:
           HOME: /root
-          USERNAME: ${{ secrets.ECOMMERCE_USERNAME }}
-          PASSWORD: ${{ secrets.ECOMMERCE_PASSWORD }}
+          ECOMMERCE_USERNAME: ${{ secrets.ECOMMERCE_USERNAME }}
+          ECOMMERCE_PASSWORD: ${{ secrets.ECOMMERCE_PASSWORD }}
