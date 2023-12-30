@@ -4,6 +4,14 @@ FROM mcr.microsoft.com/playwright:focal
 # Set the working directory inside the container
 WORKDIR /tests/e2e
 
+# Set build arguments with default values
+ARG USERNAME=default_username
+ARG PASSWORD=default_password
+
+# Set environment variables using build arguments
+ENV USERNAME=$USERNAME \
+    PASSWORD=$PASSWORD
+    
 # Copy project files (including tests)
 COPY . .
 
