@@ -1,3 +1,4 @@
+[![Playwright Tests](https://github.com/arvindmehairjan/PlaywrightEcommerceTest/actions/workflows/playwright.yml/badge.svg)](https://github.com/arvindmehairjan/PlaywrightEcommerceTest/actions/workflows/playwright.yml)
 # Playwright Test Automation Framework testing E2E and API calls
 
 This is a test automation framework built with Playwright and JavaScript. The main purpose is to show an example how an ecommerce shop can be tested for the E2E and how to test the API calls. In this example a simple get and post requests are being tested.
