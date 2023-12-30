@@ -9,8 +9,8 @@ export class LoginPage {
         this.errorText = page.locator("[data-test='error']");
     }
     enterCredentials = async () => {
-        await this.usernameField.fill(process.env.ECOMMERCE_USERNAME);
-        await this.passwordField.fill(process.env.ECOMMERCE_PASSWORD);
+        await this.usernameField.type(process.env.ECOMMERCE_USERNAME);
+        await this.passwordField.type(process.env.ECOMMERCE_PASSWORD);
         await this.loginBtn.click();
     }
 

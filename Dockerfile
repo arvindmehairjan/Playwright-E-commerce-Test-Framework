@@ -5,13 +5,13 @@ FROM mcr.microsoft.com/playwright:focal
 WORKDIR /tests/e2e
 
 # Set build arguments with default values
-ARG USERNAME=default_username
-ARG PASSWORD=default_password
+ARG ECOMMERCE_USERNAME=default_username
+ARG ECOMMERCE_PASSWORD=ECOMMERCE_PASSWORD
 
 # Set environment variables using build arguments
-ENV USERNAME=$USERNAME \
-    PASSWORD=$PASSWORD
-    
+ENV ECOMMERCE_USERNAME=$ECOMMERCE_USERNAME \
+    ECOMMERCE_PASSWORD=$ECOMMERCE_PASSWORD
+
 # Copy project files (including tests)
 COPY . .
 
