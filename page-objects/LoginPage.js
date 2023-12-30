@@ -8,8 +8,8 @@ export class LoginPage {
         this.loginBtn = page.getByRole('button', { name: 'Login' });
     }
     enterCredentials = async () => {
-        await this.usernameField.fill(process.env.USERNAME);
-        await this.passwordField.fill(process.env.PASSWORD);
+        await this.usernameField.type(process.env.USERNAME);
+        await this.passwordField.type(process.env.PASSWORD);
         await this.loginBtn.click();
     }
 }
